@@ -11,11 +11,10 @@
     <description>Builds, tests, and runs the project antWebtest.</description>
     <import file="nbproject/build-impl.xml"/>
     
-     <taskdef
+    <spotbugs home="${spotbugs.home}" output="**/spotbugsXml.xml" >
+         <taskdef
             resource="edu/umd/cs/findbugs/anttask/task.properties"
             classpath="${basedir}/build/web/WEB-INF/lib/spotbugs-ant.jar" />
-     
-    <spotbugs home="${spotbugs.home}" output="**/spotbugsXml.xml" >
       <sourcePath path="src"/>
       <class location="${basedir}/build/web/WEB-INF/lib/bcel-6.7.0.jar" />
     </spotbugs>
@@ -79,3 +78,5 @@
 
     -->
 </project>
+
+
