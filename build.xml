@@ -11,22 +11,11 @@
     <description>Builds, tests, and runs the project antWebtest.</description>
     <import file="nbproject/build-impl.xml"/>
     
+    <spotbugs home="${spotbugs.home}" output="**/spotbugsXml.xml" >
+      <sourcePath path="src"/>
+      <class location="${basedir}/build/web/WEB-INF/lib/bcel-6.7.0.jar" />
+    </spotbugs>
     
-    <taskdef
-    resource="edu/umd/cs/findbugs/anttask/tasks.properties"
-    classpath="C:/Software/spotbugs-4.7.3/spotbugs-ant.jar" />
-    
-  <property name="spotbugs.home" value="/export/home/daveho/work/spotbugs" />
-
-    <target name="spotbugs" depends="compile">
-        <spotbugs home="C:/Software/spotbugs-4.7.3"
-            output="xml"
-            outputFile="bcel-sb.xml" >
-            <auxClasspath path="${basedir}/lib/Regex.jar" />
-            <sourcePath path="${basedir}/src/java" />
-            <class location="${basedir}/bin/bcel.jar" />
-        </spotbugs>
-    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
