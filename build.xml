@@ -12,7 +12,6 @@
     <import file="nbproject/build-impl.xml"/>
     
      <taskdef
-            name="defspotbugs"
             resource="edu/umd/cs/findbugs/anttask/task.properties"
             classpath="${basedir}/build/web/WEB-INF/lib/spotbugs-ant.jar" />
      
