@@ -13,14 +13,15 @@
     
     
     <target name="jar" depends="compile">
-        <jar destfile="${dist}/antWebtest.jar" basedir=""/>
+        <jar destfile="dist/antWebtest.jar" basedir=""/>
     </target>
 
-    <target name="run-spotbugs" depends="jar">
-        <taskdef
+         <taskdef
             name="spotbugs"
             resource="edu.umd.cs.findbugs.anttask.task.properties"
             classpath="${basedir}/build/web/WEB-INF/lib/spotbugs-ant.jar" />
+         
+    <target name="run-spotbugs" depends="jar">
     <spotbugs home="${spotbugs.home}" output="**/spotbugsXml.xml" >
       <sourcePath path="${src.dir}"/>
       <classPath path="${basedir}/build" />
