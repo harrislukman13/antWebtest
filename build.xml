@@ -24,7 +24,7 @@
             classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
     <spotbugs home="C:\Software\spotbugs-4.7.3" output="xml" outputFile="spotbugsXml.xml">
       <sourcePath path="${basedir}/src/java" />
-      <class location="${basedir}/build/web/WEB-INF/lib/bcel-6.7.0.jar" />
+      <class location="${basedir}/dist/antWebtest.jar" />
       <auxClasspath> 
         <fileset dir="dist" includes="*.jar"/>
       </auxClasspath>
