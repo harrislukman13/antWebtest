@@ -16,21 +16,21 @@
         <jar destfile="dist/antWebtest.jar" basedir=""/>
     </target>
 
+           
+    <target name="spotbugs" depends="jar">
          <taskdef
             name="spotbugs"
-            resource="edu.umd.cs.findbugs.anttask.task.properties"
-            classpath="${basedir}/build/web/WEB-INF/lib/spotbugs-ant.jar" />
-         
-    <target name="run-spotbugs" depends="jar">
-    <spotbugs home="${spotbugs.home}" output="**/spotbugsXml.xml" >
-      <sourcePath path="${src.dir}"/>
-      <classPath path="${basedir}/build" />
+            classpath="${basedir}/build/web/WEB-INF/lib/spotbugs-ant.jar"
+            classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
+    <spotbugs home="C:\Software\spotbugs-4.7.3" output="xml" outputFile="spotbugsXml.xml">
+      <sourcePath path="${basedir}/src/java" />
+      <class location="${basedir}/build/web/WEB-INF/lib/bcel-6.7.0.jar" />
       <auxClasspath> 
-        <fileset dir="${dist.dir}" includes="*.jar"/>
+        <fileset dir="dist" includes="*.jar"/>
       </auxClasspath>
-      <xmlOutput output="spotbugsXml.xml" />
     </spotbugs>
     </target>
+  
     
     <!--
 
