@@ -11,6 +11,11 @@
     <description>Builds, tests, and runs the project antWebtest.</description>
     <import file="nbproject/build-impl.xml"/>
     
+    
+    <target name="jar" depends="compile">
+        <jar destfile="${dist}/antWebtest.jar" basedir="${build}"/>
+    </target>
+
     <target name="run-spotbugs" depends="jar">
         <taskdef
             name="spotbugs"
